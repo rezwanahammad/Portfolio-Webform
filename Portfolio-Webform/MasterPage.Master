@@ -1,10 +1,19 @@
 ﻿<%@ Master Language="C#" %>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head runat="server">
     <title>Rezwan Ahammad Raad - Portfolio</title>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="CSS/Site.css" rel="stylesheet" />
+
+    <!-- Optional: Tailwind via CDN (if you’re using Tailwind utility classes) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Global CSS (always load after framework) -->
+    <link href="~/CSS/Site.css?v=<%: DateTime.Now.Ticks %>" rel="stylesheet" />
+
+    <!-- Page-specific CSS placeholder (injected from .aspx/.ascx) -->
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
 </head>
 <body class="light-mode">
     <!-- Only ONE server-side form allowed -->
@@ -16,8 +25,9 @@
                 <li><a href="#education" onclick="scrollToSection('education'); return false;">Education</a></li>
                 <li><a href="#skills" onclick="scrollToSection('skills'); return false;">Skills</a></li>
                 <li><a href="#projects" onclick="scrollToSection('projects'); return false;">Projects</a></li>
+                 <li><a href="#photgraphy" onclick="scrollToSection('photography'); return false;">Photography</a></li>
                 <li><a href="#contact" onclick="scrollToSection('contact'); return false;">Contact</a></li>
-                <li><button type="button" onclick="toggleTheme()" class="theme-toggle">🌙/☀️</button></li>
+                <li><button type="button" onclick="toggleTheme()" class="theme-toggle" aria-label="Toggle theme">🌙/☀️</button></li>
             </ul>
         </nav>
 
@@ -48,19 +58,22 @@
         function toggleTheme() {
             const body = document.body;
             body.classList.toggle("dark-mode");
-
             const theme = body.classList.contains("dark-mode") ? "dark" : "light";
             document.cookie = "theme=" + theme + "; path=/; max-age=31536000"; // 1 year
         }
 
         // On page load, restore saved theme
-        (function () {
-            const theme = getCookie("theme") || "light";
-            if (theme === "dark") {
+        document.addEventListener("DOMContentLoaded", function () {
+            const savedTheme = getCookie("theme");
+            if (savedTheme === "dark") {
                 document.body.classList.add("dark-mode");
+            } else if (savedTheme === "light") {
+                document.body.classList.remove("dark-mode");
             }
-        })();
+            // Default: if no cookie, use user preference or default to light
+        });
 
+        // Helper: Get cookie by name
         function getCookie(name) {
             const value = "; " + document.cookie;
             const parts = value.split("; " + name + "=");
@@ -68,21 +81,21 @@
         }
 
         // Optional: Highlight active nav link on scroll
-        window.addEventListener("scroll", () => {
+        window.addEventListener("scroll", function () {
             const sections = ["home", "about", "education", "skills", "projects", "contact"];
             const navLinks = document.querySelectorAll("nav a");
 
-            let currentSection = "";
+            let current = "";
             for (let section of sections) {
                 const el = document.getElementById(section);
                 if (el && window.scrollY >= el.offsetTop - 100) {
-                    currentSection = section;
+                    current = section;
                 }
             }
 
             navLinks.forEach(link => {
                 link.classList.remove("active");
-                if (link.getAttribute("onclick").includes(currentSection)) {
+                if (current && link.getAttribute("onclick").includes(current)) {
                     link.classList.add("active");
                 }
             });

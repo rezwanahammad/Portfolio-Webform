@@ -4,15 +4,25 @@
 <%@ Register Src="~/Sections/Education.ascx" TagPrefix="sec" TagName="Education" %>
 <%@ Register Src="~/Sections/Skills.ascx" TagPrefix="sec" TagName="Skills" %>
 <%@ Register Src="~/Sections/Projects.ascx" TagPrefix="sec" TagName="Projects" %>
+<%@ Register Src="~/Sections/Photography.ascx" TagPrefix="sec" TagName="Photography" %>
 
 <asp:Content ContentPlaceHolderID="MainContent" runat="server">
 
     <!-- Hero Section -->
     <section id="home" class="max-w-7xl mx-auto p-6 md:p-10 mt-10 text-center">
-        <h1 class="text-4xl md:text-6xl font-bold mb-4 bg-gradient-to-r from-[#7FFFD4] to-[#20B2AA] bg-clip-text text-transparent">
+        <!-- Profile Image (optional, uncomment when needed) -->
+        <div class="relative mb-8 inline-block">
+            <div class="w-24 h-24 md:w-24 md:h-24 rounded-full border-4 border-[#7FFFD4] mx-auto overflow-hidden shadow-lg relative">
+                <img src="Images/profile.jpg" alt="Rezwan Ahammad Raad" class="w-full h-full object-contain" />
+            </div>
+        </div>
+        
+
+        <!-- Hero Text -->
+        <h1 class="hero-title">
             Hi, I’m Raad
         </h1>
-        <p class="text-gray-300 text-lg md:text-xl leading-relaxed">
+        <p class="hero-subtitle">
             Computer Science & Engineering student with expertise in C, C++, Python, Java, JavaScript, and modern frameworks like React, Next.js, and React Native. Dedicated to building impactful solutions through code. Always learning, always building.
         </p>
     </section>
@@ -22,6 +32,6 @@
     <sec:Education runat="server" />
     <sec:Skills runat="server" />
     <sec:Projects runat="server" />
-    
+    <sec:Photography runat="server" />
 
 </asp:Content>

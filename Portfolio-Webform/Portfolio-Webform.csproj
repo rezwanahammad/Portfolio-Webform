@@ -69,9 +69,21 @@
   <ItemGroup>
     <Content Include="CSS\Site.css" />
     <Content Include="Default.aspx" />
+    <Content Include="Images\Pic1.jpg" />
+    <Content Include="Images\Pic2.jpg" />
+    <Content Include="Images\Pic3.jpg" />
+    <Content Include="Images\Pic4.jpg" />
+    <Content Include="Images\Pic5.jpg" />
+    <Content Include="Images\Pic6.jpg" />
+    <Content Include="Images\Pic7.jpg" />
+    <Content Include="Images\Pic8.jpg" />
+    <Content Include="Images\profile.jpg" />
+    <Content Include="Images\raadnorm.jpg" />
+    <Content Include="Images\raadnorm3.jpg" />
     <Content Include="Scripts\theme.js" />
     <Content Include="Sections\About.ascx" />
     <Content Include="Sections\Education.ascx" />
+    <Content Include="Sections\Photography.ascx" />
     <Content Include="Sections\Projects.ascx" />
     <Content Include="Sections\Skills.ascx" />
     <Content Include="Web.config" />
@@ -106,6 +118,13 @@
     <Compile Include="Sections\Education.ascx.designer.cs">
       <DependentUpon>Education.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Sections\Photography.ascx.cs">
+      <DependentUpon>Photography.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sections\Photography.ascx.designer.cs">
+      <DependentUpon>Photography.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Sections\Projects.ascx.cs">
       <DependentUpon>Projects.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -134,7 +153,6 @@
   <ItemGroup>
     <Folder Include="Controls\" />
     <Folder Include="Files\" />
-    <Folder Include="Images\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
