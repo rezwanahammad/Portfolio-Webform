@@ -69,7 +69,9 @@
   <ItemGroup>
     <Content Include="CSS\Site.css" />
     <Content Include="Default.aspx" />
+    <Content Include="Images\ananda_mohan.png" />
     <Content Include="Images\download-icon.png" />
+    <Content Include="Images\kuet.png" />
     <Content Include="Images\Pic1.jpg" />
     <Content Include="Images\Pic2.jpg" />
     <Content Include="Images\Pic3.jpg" />
@@ -81,8 +83,10 @@
     <Content Include="Images\profile.jpg" />
     <Content Include="Images\raadnorm.jpg" />
     <Content Include="Images\raadnorm3.jpg" />
+    <Content Include="Images\zilla_school.png" />
     <Content Include="Scripts\theme.js" />
     <Content Include="Sections\About.ascx" />
+    <Content Include="Sections\Contact.ascx" />
     <Content Include="Sections\Education.ascx" />
     <Content Include="Sections\Photography.ascx" />
     <Content Include="Sections\Projects.ascx" />
@@ -111,6 +115,13 @@
     </Compile>
     <Compile Include="Sections\About.ascx.designer.cs">
       <DependentUpon>About.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Sections\Contact.ascx.cs">
+      <DependentUpon>Contact.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Sections\Contact.ascx.designer.cs">
+      <DependentUpon>Contact.ascx</DependentUpon>
     </Compile>
     <Compile Include="Sections\Education.ascx.cs">
       <DependentUpon>Education.ascx</DependentUpon>

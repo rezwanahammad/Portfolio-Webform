@@ -496,7 +496,7 @@ body.dark-mode .info-list {
 
 /* -------------------- Education Section -------------------- */
 .education-section {
-    max-width: 80rem;
+    max-width: 50rem;
     margin: 4rem auto 0;
     padding: 1.5rem;
 }
@@ -515,6 +515,7 @@ body.dark-mode .info-list {
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
+    text-align:center;
 }
 
 @media (min-width: 768px) {
@@ -562,6 +563,20 @@ body.dark-mode .education-card {
 body.dark-mode .education-card .period {
     color: #94a3b8;
 }
+
+/* ✅ Institute name + logo styling */
+.education-card .institute {
+    display: flex;
+    align-items: center; /* Vertically center the logo and text */
+    gap: 10px; /* Space between logo and text */
+}
+
+.edu-logo {
+    width: 50px; /* Adjust as needed */
+    height: 50px; /* Adjust as needed */
+    object-fit: contain; /* Keep logo aspect ratio */
+}
+
 /*Education section ends*/
 
 /* -------------------- Skill Section -------------------- */
@@ -877,3 +892,4 @@ body.dark-mode .photo-card {
 
 
 /*Photography section ends*/
+
