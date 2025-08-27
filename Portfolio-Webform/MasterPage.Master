@@ -12,6 +12,11 @@
     <!-- Global CSS (always load after framework) -->
     <link href="~/CSS/Site.css?v=<%: DateTime.Now.Ticks %>" rel="stylesheet" />
 
+            <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        />
+
     <!-- Page-specific CSS placeholder (injected from .aspx/.ascx) -->
     <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
 </head>
@@ -82,7 +87,7 @@
 
         // Optional: Highlight active nav link on scroll
         window.addEventListener("scroll", function () {
-            const sections = ["home", "about", "education", "skills", "projects", "contact"];
+            const sections = ["home", "about", "education", "skills", "projects", "photography", "contact"];
             const navLinks = document.querySelectorAll("nav a");
 
             let current = "";

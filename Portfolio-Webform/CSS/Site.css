@@ -169,7 +169,7 @@ body.dark-mode .text-gray-300 {
     background-color: #111827;
 }
 
-/* Navigation */
+/* -------------------- Navigation -------------------- */
 nav {
     background-color: #0f172a;
     position: sticky;
@@ -306,17 +306,18 @@ body.dark-mode .form-control {
 }
 /* Responsive adjustment ends */
 
-    /*Default page*/
+/* -------------------- Default page Section -------------------- */
 /* Hero Section */
 .hero-title {
-    font-size: 1.25rem; /* default */
-    font-weight: 700;
+    font-size: 1.10rem; /* default */
+    font-weight: 500;
     margin-bottom: 1rem;
     background: linear-gradient(90deg, #7FFFD4, #20B2AA);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
 }
+
 
 @media (min-width: 768px) {
     .hero-title {
@@ -336,10 +337,60 @@ body.dark-mode .hero-subtitle {
     color: #e2e8f0; /* light gray for dark mode */
 }
 
+.profile-pic-wrapper {
+    width: 4rem; /* default 48 (192px) */
+    height: 4rem;
+    border: 4px solid #7FFFD4;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 2rem auto; /* center horizontally + spacing below */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.profile-pic {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* fills circle neatly */
+}
+
+/* CV Button */
+.cv-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 2px 7px;
+    background-color: #20B2AA; /* teal */
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+    .cv-btn:hover {
+        background-color: #178f86;
+        transform: scale(1.05);
+    }
+
+.cv-icon {
+    width: 20px;
+    height: 20px;
+}
+
+/* Larger screen size (tablet and up) */
+@media (min-width: 768px) {
+    .profile-pic-wrapper {
+        width: 14rem; /* bigger circle */
+        height: 14rem;
+    }
+}
+
 /*Default page ends*/
 
 
-/* About Section */
+/* -------------------- About Section -------------------- */
 .about-section {
     max-width: 80rem;
     margin: 4rem auto 0;
@@ -443,7 +494,7 @@ body.dark-mode .info-list {
 
 /*About section ends*/
 
-/* Education Section */
+/* -------------------- Education Section -------------------- */
 .education-section {
     max-width: 80rem;
     margin: 4rem auto 0;
@@ -513,7 +564,7 @@ body.dark-mode .education-card .period {
 }
 /*Education section ends*/
 
-/* Skills Section */
+/* -------------------- Skill Section -------------------- */
 .skills-section {
     max-width: 80rem;
     margin: 4rem auto 0;
@@ -617,7 +668,7 @@ body.dark-mode .skill-card:hover {
 /*Skill section ends*/
 
 
-/* Projects Section */
+/* -------------------- Project Section -------------------- */
 .projects-section {
     max-width: 80rem;
     margin: 4rem auto 0;

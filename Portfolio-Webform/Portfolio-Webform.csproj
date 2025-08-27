@@ -69,6 +69,7 @@
   <ItemGroup>
     <Content Include="CSS\Site.css" />
     <Content Include="Default.aspx" />
+    <Content Include="Images\download-icon.png" />
     <Content Include="Images\Pic1.jpg" />
     <Content Include="Images\Pic2.jpg" />
     <Content Include="Images\Pic3.jpg" />
@@ -142,6 +143,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MasterPage.Master" />
+    <Content Include="Files\CV_Raad.pdf" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -152,7 +154,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controls\" />
-    <Folder Include="Files\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
