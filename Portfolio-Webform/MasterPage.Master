@@ -6,37 +6,69 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Optional: Tailwind via CDN (if you’re using Tailwind utility classes) -->
+    <!-- Optional: Tailwind via CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
 
-    <!-- Global CSS (always load after framework) -->
+    <!-- Global CSS -->
     <link href="~/CSS/Site.css?v=<%: DateTime.Now.Ticks %>" rel="stylesheet" />
 
-            <link
-          rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-        />
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
-    <!-- Page-specific CSS placeholder (injected from .aspx/.ascx) -->
     <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
 </head>
 <body class="light-mode">
     <!-- Only ONE server-side form allowed -->
     <form runat="server">
         <nav>
-            <ul>
-                <li><a href="#home" onclick="scrollToSection('home'); return false;">Home</a></li>
-                <li><a href="#about" onclick="scrollToSection('about'); return false;">About</a></li>
-                <li><a href="#education" onclick="scrollToSection('education'); return false;">Education</a></li>
-                <li><a href="#skills" onclick="scrollToSection('skills'); return false;">Skills</a></li>
-                <li><a href="#projects" onclick="scrollToSection('projects'); return false;">Projects</a></li>
-                 <li><a href="#photgraphy" onclick="scrollToSection('photography'); return false;">Photography</a></li>
-                <li><button type="button" onclick="toggleTheme()" class="theme-toggle" aria-label="Toggle theme">🌙/☀️</button></li>
-            </ul>
+            <div class="nav-container">
+                <!-- Brand/Name on the left -->
+                <div class="nav-brand">
+                    <a href="#home" onclick="scrollToSection('home'); return false;">
+                        Rezwan Raad
+                    </a>
+                </div>
+
+                <!-- Hamburger Menu Button -->
+                <button type="button" class="hamburger-toggle" onclick="toggleMenu()" aria-label="Toggle menu">
+                    <span class="hamburger-icon">☰</span>
+                </button>
+                
+                <!-- Desktop Navigation -->
+                <ul class="nav-desktop">
+                    <li><a href="#home" onclick="scrollToSection('home'); return false;">Home</a></li>
+                    <li><a href="#about" onclick="scrollToSection('about'); return false;">About</a></li>
+                    <li><a href="#education" onclick="scrollToSection('education'); return false;">Education</a></li>
+                    <li><a href="#skills" onclick="scrollToSection('skills'); return false;">Skills</a></li>
+                    <li><a href="#projects" onclick="scrollToSection('projects'); return false;">Projects</a></li>
+                    <li><a href="#photography" onclick="scrollToSection('photography'); return false;">Photography</a></li>
+                    <li>
+                        <button type="button" onclick="toggleTheme()" class="theme-toggle-btn" aria-label="Toggle theme">
+                            <i class="fas fa-moon"></i>
+                            <span class="theme-text">Dark Mode</span>
+                        </button>
+                    </li>
+                </ul>
+                
+                <!-- Mobile Navigation -->
+                <ul class="nav-mobile" id="mobile-menu">
+                    <li><a href="#home" onclick="scrollToSection('home'); return false;">Home</a></li>
+                    <li><a href="#about" onclick="scrollToSection('about'); return false;">About</a></li>
+                    <li><a href="#education" onclick="scrollToSection('education'); return false;">Education</a></li>
+                    <li><a href="#skills" onclick="scrollToSection('skills'); return false;">Skills</a></li>
+                    <li><a href="#projects" onclick="scrollToSection('projects'); return false;">Projects</a></li>
+                    <li><a href="#photography" onclick="scrollToSection('photography'); return false;">Photography</a></li>
+                    <li>
+                        <button type="button" onclick="toggleTheme()" class="theme-toggle-btn" aria-label="Toggle theme">
+                            <i class="fas fa-moon"></i>
+                            <span class="theme-text">Dark Mode</span>
+                        </button>
+                    </li>
+                </ul>
+            </div>
         </nav>
 
         <div class="container">
-            <!-- All content from Default.aspx will be injected here -->
             <asp:ContentPlaceHolder ID="MainContent" runat="server" />
         </div>
 
@@ -45,14 +77,14 @@
         </footer>
     </form>
 
-    <!-- JavaScript for smooth scrolling and theme toggle -->
+    <!-- JavaScript -->
     <script type="text/javascript">
         // Smooth scroll to section
         function scrollToSection(id) {
             const element = document.getElementById(id);
             if (element) {
                 window.scrollTo({
-                    top: element.offsetTop - 80, // Offset for navbar height
+                    top: element.offsetTop - 80,
                     behavior: 'smooth'
                 });
             }
@@ -62,20 +94,23 @@
         function toggleTheme() {
             const body = document.body;
             body.classList.toggle("dark-mode");
-            const theme = body.classList.contains("dark-mode") ? "dark" : "light";
-            document.cookie = "theme=" + theme + "; path=/; max-age=31536000"; // 1 year
-        }
 
-        // On page load, restore saved theme
-        document.addEventListener("DOMContentLoaded", function () {
-            const savedTheme = getCookie("theme");
-            if (savedTheme === "dark") {
-                document.body.classList.add("dark-mode");
-            } else if (savedTheme === "light") {
-                document.body.classList.remove("dark-mode");
-            }
-            // Default: if no cookie, use user preference or default to light
-        });
+            const theme = body.classList.contains("dark-mode") ? "dark" : "light";
+            document.cookie = "theme=" + theme + "; path=/; max-age=31536000";
+
+            // Update all theme toggle buttons
+            document.querySelectorAll('.theme-toggle-btn').forEach(btn => {
+                const icon = btn.querySelector('i');
+                const text = btn.querySelector('.theme-text');
+                if (theme === "dark") {
+                    icon.className = "fas fa-sun";
+                    text.textContent = "Light Mode";
+                } else {
+                    icon.className = "fas fa-moon";
+                    text.textContent = "Dark Mode";
+                }
+            });
+        }
 
         // Helper: Get cookie by name
         function getCookie(name) {
@@ -84,9 +119,31 @@
             return parts.length === 2 ? parts.pop().split(";").shift() : null;
         }
 
-        // Optional: Highlight active nav link on scroll
+        // Toggle mobile menu
+        function toggleMenu() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.style.display = mobileMenu.style.display === 'flex' ? 'none' : 'flex';
+        }
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-mobile a, .nav-mobile .theme-toggle-btn').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('mobile-menu').style.display = 'none';
+            });
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            const mobileMenu = document.getElementById('mobile-menu');
+            const hamburger = document.querySelector('.hamburger-toggle');
+            if (!mobileMenu.contains(e.target) && !hamburger.contains(e.target)) {
+                mobileMenu.style.display = 'none';
+            }
+        });
+
+        // Highlight active nav link on scroll
         window.addEventListener("scroll", function () {
-            const sections = ["home", "about", "education", "skills", "projects", "photography", "contact"];
+            const sections = ["home", "about", "education", "skills", "projects", "photography"];
             const navLinks = document.querySelectorAll("nav a");
 
             let current = "";
@@ -99,10 +156,60 @@
 
             navLinks.forEach(link => {
                 link.classList.remove("active");
-                if (current && link.getAttribute("onclick").includes(current)) {
+                const onclickAttr = link.getAttribute("onclick");
+                if (current && onclickAttr && onclickAttr.includes(current)) {
                     link.classList.add("active");
                 }
             });
+        });
+
+        // === DOM Ready: Restore Theme & Start Typing Animation ===
+        document.addEventListener("DOMContentLoaded", function () {
+            const savedTheme = getCookie("theme");
+            const body = document.body;
+            const buttons = document.querySelectorAll('.theme-toggle-btn');
+
+            // Restore theme
+            if (savedTheme === "dark") {
+                body.classList.add("dark-mode");
+                buttons.forEach(btn => {
+                    const icon = btn.querySelector('i');
+                    const text = btn.querySelector('.theme-text');
+                    icon.className = "fas fa-sun";
+                    text.textContent = "Light Mode";
+                });
+            } else {
+                buttons.forEach(btn => {
+                    const icon = btn.querySelector('i');
+                    const text = btn.querySelector('.theme-text');
+                    icon.className = "fas fa-moon";
+                    text.textContent = "Dark Mode";
+                });
+            }
+
+            // Start typing animation (centered, no delay)
+            const heroTitle = document.getElementById("typewriter");
+            if (heroTitle) {
+                const fullText = heroTitle.textContent;
+                heroTitle.textContent = ""; // Clear for typing effect
+
+                let index = 0;
+                const speed = 150; // ms per character
+
+                function type() {
+                    if (index < fullText.length) {
+                        heroTitle.textContent += fullText.charAt(index);
+                        index++;
+                        setTimeout(type, speed);
+                    }
+                }
+
+                // Start immediately
+                type();
+            }
+
+            // Trigger scroll event to highlight active section
+            window.dispatchEvent(new Event('scroll'));
         });
     </script>
 </body>

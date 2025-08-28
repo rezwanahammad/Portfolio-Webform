@@ -16,9 +16,8 @@
             </div>
 
             <!-- Hero Text -->
-            <h1 class="hero-title">
-                Hi, I’m Raad
-            </h1>
+                <h1 class="hero-title" id="typewriter">Hi, I’m Raad</h1>
+
             <p class="hero-subtitle">
                 Computer Science & Engineering student with expertise in C, C++, Python, Java, JavaScript, and modern frameworks like React, Next.js, and React Native. Dedicated to building impactful solutions through code. Always learning, always building.
             </p>
