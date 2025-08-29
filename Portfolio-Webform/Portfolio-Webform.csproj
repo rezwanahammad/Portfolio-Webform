@@ -69,9 +69,13 @@
   <ItemGroup>
     <Content Include="CSS\Site.css" />
     <Content Include="Default.aspx" />
+    <Content Include="Images\default.png" />
     <Content Include="Images\ananda_mohan.png" />
+    <Content Include="Images\bangla.png" />
     <Content Include="Images\download-icon.png" />
+    <Content Include="Images\edusity.png" />
     <Content Include="Images\kuet.png" />
+    <Content Include="Images\newsbit.png" />
     <Content Include="Images\Pic1.jpg" />
     <Content Include="Images\Pic2.jpg" />
     <Content Include="Images\Pic3.jpg" />
@@ -94,6 +98,7 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Code\Project.cs" />
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
