@@ -1,7 +1,7 @@
 ﻿<%@ Control Language="C#" %>
 <section id="photography" class="photography-section">
     <h2 class="photography-heading">Photography</h2>
-    <p class="photography-intro">Some of my favorite shots from my photography journey:</p>
+    <p class="photography-intro">Besides study,I love to capture the beauty around me.Whenever something attracts my eye,I take out my phone and capture it as memory. Here are the few captures of mine:</p>
     <div class="photography-gallery">
         <div class="photo-card">
             <img src="Images/pic1.jpg" alt="Photo 1">
