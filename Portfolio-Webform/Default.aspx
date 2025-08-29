@@ -30,6 +30,9 @@
         <img src="Images/download-icon.png" alt="Download CV" class="cv-icon" />
         CV
     </a>
+          <a href="https://mail.google.com/mail/?view=cm&fs=1&to=rezwanahammad68@gmail.com" target="_blank" class="hover:text-red-600 text-xl">
+             <i class="fab fa-google"></i>
+            </a>
           <a href="https://www.linkedin.com/in/rezwan-ahammad-a684b024b/" target="_blank" class="hover:text-gray-600">
             <i class="fab fa-linkedin"></i>
            </a>

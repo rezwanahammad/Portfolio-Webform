@@ -9,19 +9,19 @@
         </div>
         <div class="skill-card">
             <h3>Backend Development</h3>
-            <p>Node.js, Express, Python, Java </p>
+            <p>Node.js, Express, Python, Java,Asp.Net </p>
         </div>
         <div class="skill-card">
             <h3>Databases</h3>
-            <p>MongoDB, MySQL, Firebase</p>
+            <p>MongoDB, MySQL, Firebase, Mongoose, Prisma</p>
         </div>
         <div class="skill-card">
             <h3>AI & ML</h3>
-            <p>TensorFlow, PyTorch, Numpy, Pandas</p>
+            <p>TensorFlow, PyTorch, Numpy, Pandas, Scikit-Learn</p>
         </div>
         <div class="skill-card">
             <h3>DevOps</h3>
-            <p>Docker, GitHub Actions, CI/CD</p>
+            <p>Docker, GitHub Actions, CI/CD, Vercel</p>
         </div>
         <div class="skill-card">
             <h3>App Development</h3>
