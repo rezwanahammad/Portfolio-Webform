@@ -3,5 +3,7 @@
 <section id="projects" class="projects-section">
     <h2 class="projects-heading">Projects</h2>
     <p class="projects-intro">Here are some of the projects I have worked on recently:</p>
-    <asp:PlaceHolder ID="ProjectsContainer" runat="server" />
+    <div class="projects-list">
+        <asp:PlaceHolder ID="ProjectsContainer" runat="server" />
+    </div>
 </section>

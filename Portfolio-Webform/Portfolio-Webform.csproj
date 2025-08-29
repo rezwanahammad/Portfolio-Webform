@@ -87,6 +87,7 @@
     <Content Include="Images\profile.jpg" />
     <Content Include="Images\raadnorm.jpg" />
     <Content Include="Images\raadnorm3.jpg" />
+    <Content Include="Images\todo.png" />
     <Content Include="Images\zilla_school.png" />
     <Content Include="Scripts\theme.js" />
     <Content Include="Sections\About.ascx" />
