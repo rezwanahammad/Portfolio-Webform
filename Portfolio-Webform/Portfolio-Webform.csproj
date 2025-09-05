@@ -67,6 +67,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AdminPage.aspx" />
+    <Content Include="Controls\AdminPanel.ascx" />
+    <Content Include="Controls\LoginControl.ascx" />
+    <Content Include="Controls\SignupControl.ascx" />
     <Content Include="CSS\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Images\default.png" />
@@ -89,6 +93,8 @@
     <Content Include="Images\raadnorm3.jpg" />
     <Content Include="Images\todo.png" />
     <Content Include="Images\zilla_school.png" />
+    <Content Include="LoginPage.aspx" />
+    <Content Include="Logout.aspx" />
     <Content Include="Scripts\theme.js" />
     <Content Include="Sections\About.ascx" />
     <Content Include="Sections\Contact.ascx" />
@@ -100,12 +106,54 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Code\Project.cs" />
+    <Compile Include="AdminPage.aspx.cs">
+      <DependentUpon>AdminPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AdminPage.aspx.designer.cs">
+      <DependentUpon>AdminPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\AdminPanel.ascx.cs">
+      <DependentUpon>AdminPanel.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\AdminPanel.ascx.designer.cs">
+      <DependentUpon>AdminPanel.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LoginControl.ascx.cs">
+      <DependentUpon>LoginControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\LoginControl.ascx.designer.cs">
+      <DependentUpon>LoginControl.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SignupControl.ascx.cs">
+      <DependentUpon>SignupControl.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Controls\SignupControl.ascx.designer.cs">
+      <DependentUpon>SignupControl.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Default.aspx.cs">
       <DependentUpon>Default.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginPage.aspx.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginPage.aspx.designer.cs">
+      <DependentUpon>LoginPage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
     </Compile>
     <Compile Include="MasterPage.Master.cs">
       <DependentUpon>MasterPage.Master</DependentUpon>
@@ -169,9 +217,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Controls\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

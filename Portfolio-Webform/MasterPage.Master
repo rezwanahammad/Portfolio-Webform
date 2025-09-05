@@ -42,6 +42,11 @@
                     <li><a href="#skills" onclick="scrollToSection('skills'); return false;">Skills</a></li>
                     <li><a href="#projects" onclick="scrollToSection('projects'); return false;">Projects</a></li>
                     <li><a href="#photography" onclick="scrollToSection('photography'); return false;">Photography</a></li>
+
+                     <!-- Login Link -->
+                    <li>
+                        <a href="LoginPage.aspx" class="nav-link nav-link--button">Login</a>
+                    </li>
                     <li>
                         <button type="button" onclick="toggleTheme()" class="theme-toggle-btn" aria-label="Toggle theme">
                             <i class="fas fa-moon"></i>
@@ -58,6 +63,11 @@
                     <li><a href="#skills" onclick="scrollToSection('skills'); return false;">Skills</a></li>
                     <li><a href="#projects" onclick="scrollToSection('projects'); return false;">Projects</a></li>
                     <li><a href="#photography" onclick="scrollToSection('photography'); return false;">Photography</a></li>
+
+                      <!-- Login Link -->
+                    <li>
+                        <a href="LoginPage.aspx" class="nav-link nav-link--button">Login</a>
+                    </li>
                     <li>
                         <button type="button" onclick="toggleTheme()" class="theme-toggle-btn" aria-label="Toggle theme">
                             <i class="fas fa-moon"></i>
