@@ -171,41 +171,60 @@ body.dark-mode .text-gray-300 {
 
 /* -------------------- Navigation -------------------- */
 nav {
-    background-color: #0f172a;
+    background-color: #0f172a; /* Deep blue-black in dark mode */
     position: sticky;
     top: 0;
     z-index: 50;
-    border-bottom: 1px solid #20B2AA;
+    border-bottom: 1px solid #20B2AA; /* Teal border */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-    nav ul {
-        list-style: none;
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        padding: 1rem 0;
-        gap: 1rem;
-    }
+/* Light Mode: White navbar with soft shadow */
+body:not(.dark-mode) nav {
+    background-color: #ffffff; /* Clean white background */
+    border-bottom: 1px solid #e2e8f0; /* Soft gray border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Subtle elevation */
+}
 
-    nav a {
-        color: #7FFFD4;
-        text-decoration: none;
-        font-weight: 500;
-        font-size: 1rem;
-        padding: 0.5rem 1rem;
-        border-radius: 0.375rem;
-        transition: background 0.3s, color 0.3s;
-    }
+/* Nav List */
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 1rem 0;
+    gap: 1rem;
+    margin: 0;
+}
 
-        nav a:hover {
-            background: #20B2AA;
-            color: white;
-        }
+/* Nav Links */
+nav a {
+    color: #7FFFD4; /* Aqua-teal text in dark mode */
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    transition: all 0.3s ease;
+}
 
-        nav a.active {
-            background: #20B2AA;
-            color: white;
-        }
+/* Light Mode: Dark text for readability */
+body:not(.dark-mode) nav a {
+    color: #1e293b; /* Dark gray text */
+}
+
+/* Hover Effect */
+nav a:hover {
+    background: #20B2AA;
+    color: white;
+}
+
+/* Active Link (highlighted section) */
+nav a.active {
+    background: #20B2AA;
+    color: white;
+}
+
 /* === Responsive Navigation === */
 .nav-container {
     display: flex;
@@ -214,17 +233,17 @@ nav {
     padding: 0 1rem;
 }
 
-/* Desktop Navigation - visible on larger screens */
+/* Desktop Navigation */
 .nav-desktop {
     display: flex;
     list-style: none;
     gap: 1rem;
     padding: 0;
-    margin-left:auto;
-    margin-top:1rem;
+    margin-left: auto;
+    margin-top: 1rem;
 }
 
-/* Mobile Navigation - hidden by default */
+/* Mobile Navigation (Hidden by Default) */
 .nav-mobile {
     display: none;
     position: absolute;
@@ -238,42 +257,37 @@ nav {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-    .nav-mobile li {
-        margin-bottom: 0.5rem;
-    }
+/* Light Mode: Mobile Nav */
+body:not(.dark-mode) .nav-mobile {
+    background-color: #ffffff;
+    border-bottom-color: #e2e8f0;
+}
 
-    .nav-mobile a {
-        color: #7FFFD4;
-        text-decoration: none;
-        font-weight: 500;
-        font-size: 1rem;
-        padding: 0.5rem 1rem;
-        border-radius: 0.375rem;
-        transition: background 0.3s, color 0.3s;
-        width: 100%;
-        text-align: left;
-    }
+.nav-mobile li {
+    margin-bottom: 0.5rem;
+}
 
-        .nav-mobile a:hover {
-            background: #20B2AA;
-            color: white;
-        }
+.nav-mobile a {
+    color: #7FFFD4;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.375rem;
+    transition: background 0.3s, color 0.3s;
+    width: 100%;
+    text-align: left;
+}
 
-    .nav-mobile .theme-toggle {
-        margin-top: 1rem;
-        padding: 0.25rem 0.5rem;
-        font-size: 1.25rem;
-        color: #7FFFD4;
-        cursor: pointer;
-        background: none;
-        border: none;
-    }
+/* Light Mode: Mobile Links */
+body:not(.dark-mode) .nav-mobile a {
+    color: #1e293b;
+}
 
-        .nav-mobile .theme-toggle:hover {
-            background: #20B2AA;
-            color: white;
-            border-radius: 0.375rem;
-        }
+.nav-mobile a:hover {
+    background: #20B2AA;
+    color: white;
+}
 
 /* Hamburger Toggle Button */
 .hamburger-toggle {
@@ -286,21 +300,25 @@ nav {
     display: none; /* Hidden on desktop */
 }
 
-/* Show hamburger menu on small screens */
+/* Light Mode: Hamburger */
+body:not(.dark-mode) .hamburger-toggle {
+    color: #1e293b;
+}
+
+/* Show Hamburger on Mobile */
 @media (max-width: 768px) {
     .nav-desktop {
-        display: none; /* Hide desktop nav on mobile */
+        display: none; /* Hide desktop nav */
     }
 
     .nav-mobile {
-        display: flex; /* Show mobile nav on mobile */
+        display: flex; /* Show mobile nav */
     }
 
     .hamburger-toggle {
-        display: block; /* Show hamburger button on mobile */
+        display: block; /* Show hamburger */
     }
 
-    /* Adjust spacing for mobile */
     .nav-container {
         padding: 0 0.5rem;
     }
